@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restoran Web Sitesi</title>
+  <style>
+    :root {
+      --koyu-mavi: #002b5c;
+      --acik-gri: #f2f2f2;
+      --turuncu: #ff6600;
+    }
+
+.menu-icerik {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+.menu-icerik h3 {
+  margin-top: 30px;
+  color: var(--koyu-mavi);
+}
+.menu-icerik ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--acik-gri);
+    }
+
+    header {
+      background-color: var(--koyu-mavi);
+      color: white;
+      padding: 60px;
+      text-align: center;
+
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: var(--turuncu);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background-color: #e05500;
+    }
+
+    section {
+      display: none;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    iframe {
+      width: 90%;
+      max-width: 1000px;
+      height: 400px;
+      border: 3px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .galeri {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+      gap: 15px;
+px;
+    }
+
+    .galeri img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      background-color: var(--koyu-mavi);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="position: relative;">
+    <h1 style="margin: 0;">Sea Breeze Restaurant & Shamrock Bar</h1>
+
+    <div style="position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 10px;">
+      <a href="https://facebook.com" target="_blank" style="background: white; color: #1877f2; padding: 10px; border-radius: 50%; text-align: center;">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank" style="background: white; color: #e1306c; padding: 10px; border-radius: 50%; text-align: center;">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+    </div>
+  </div>
+</header>
+
+
+<nav>
+  <a onclick="goster('anasayfa')">Ana Sayfa</a>
+  <a onclick="goster('etkinlikler')">Etkinlikler</a>
+  <a onclick="goster('galeri')">Galeri</a>
+  <a onclick="goster('menu')">Menü</a>
+  <a onclick="goster('iletisim')">İletişim</a>
+  <a onclick="goster('konum')">Konum</a>
+</nav>
+
+<section id="anasayfa" class="active">
+  <h2>Sea Breeze Restaurant & Shamrock Bar</h2>
+  <p>🍀SHAMROCK BAR🍀
+🍽️ Food, drinks & music ! 🍹
+✨ Signature cocktails & delicious meals
+🎵 Music & Karaoke
+</p>
+</section>
+
+<section id="etkinlikler">
+  <h2>Etkinlikler</h2>
+  <p>ETKİNLİKLER BÖLÜMÜ YAKINDA BURAYA EKLENECEK</p>
+</section>
+
+<section id="galeri">
+  <h2>Galeri</h2>
+  <div class="galeri">
+    <img src="images/BuyoneGetoneFree.jpg" alt="Galeri 3" />
+    <img src="images/TEQİLA SUNRİSE.webp" alt="Galeri 1" />
+    <img src="images/MİX SEA FOODS.webp" alt="Galeri 2" />
+    <img src="images/lobster.webp" alt="Galeri 1" />
+    <img src="images/Lamb2.webp" alt="Galeri 2" />
+    <img src="images/lamb1.webp" alt="Galeri 3" />
+    <img src="images/Fruit plate.webp" alt="Galeri 1" />
+    <img src="images/dışarıdan1.webp" alt="Galeri 2" />
+    <img src="images/cocktail1.webp" alt="Galeri 3" />
+    <img src="images/chickenroast.webp" alt="Galeri 2" />
+    <img src="images/melonwatermelon.webp" alt="Galeri 3" />
+  </div>
+</section>
+
+<section id="menu">
+  <div class="menu-icerik">
+  <ul>
+
+  <h2 class="text-3xl font-bold mb-4 text-center">Menü / Menu</h2>
+
+  <div class="space-y-4">
+    <!-- Kahvaltı / Breakfast -->
+    <details class="bg-white p-4 rounded-xl shadow">
+      <summary class="text-xl font-semibold cursor-pointer">Kahvaltı / Breakfast</summary>
+      <ul class="list-disc list-inside mt-2">
+        <li>Egg On Toast / Yumurta Tost</li>
+        <li>Scrambled Egg on Toast / Tost Üzerinde Sütlü Yumurta</li>
+        <li>Bacon, Egg & Chips / Bacon, Yumurta ve Cips</li>
+        <li>Sausage, Egg & Chips / Sosis, Yumurta & Cips</li>
+        <li>Bacon On Toast / Bacon Tost</li>
+        <li>Toast, Jam & Butter / Tost, Reçel ve Yağ</li>
+        <li>Beans On Toast / Tost Üzerinde Fasulye</li>
+        <li>Menemen / Menemen</li>
+        <li>Sausage, Bacon, Chips, Toast Bread / Sosis, Bacon, Cips, Tost Ekmeği</li>
+        <li>Full Breakfast / Tam Kahvaltı</li>
+        <li>Mega Breakfast / Mega Kahvaltı</li>
+        <li>Türk Kahvaltısı / Turkish Breakfast</li>
+      </ul>
+    </details>
+
+    <!-- Omletler / Omelettes -->
+    <details class="bg-white p-4 rounded-xl shadow">
+      <summary class="text-xl font-semibold cursor-pointer">Omletler / Omelettes</summary>
+      <ul class="list-disc list-inside mt-2">
+        <li>Mantarlı Omlet / Mushroom Omelette</li>
+        <li>Peynirli Omlet / Cheese Omelette</li>
+        <li>Bacon Omlet / Bacon Omelette</li>
+        <li>Sade Omlet / Plain Omelette</li>
+        <li>Karışık Omlet / Mixed Omelette</li>
+        <li>Ispanyol Omlet / Spanish Omelette</li>
+      </ul>
+    </details>
+
+    <!-- Çorbalar / Soups -->
+    <details class="bg-white p-4 rounded-xl shadow">
+      <summary class="text-xl font-semibold cursor-pointer">Çorbalar / Soups</summary>
+      <ul class="list-disc list-inside mt-2">
+        <li>Domates / Tomato</li>
+        <li>Mantar / Mushroom</li>
+        <li>Sebze / Vegetable</li>
+        <li>Mercimek / Lentil</li>
+        <li>Tavuk / Chicken</li>
+      </ul>
+    </details>
+
+    <!-- Başlangıçlar / Starters -->
+    <details class="bg-white p-4 rounded-xl shadow">
+      <summary class="text-xl font-semibold cursor-pointer">Başlangıçlar / Starters</summary>
+      <ul class="list-disc list-inside mt-2">
+        <li>Sarımsaklı Ekmek, Peynirli / Garlic Bread, Cheese</li>
+        <li>Karides Kokteyl / Prawn Cocktail</li>
+        <li>Ton Balığı Kokteyl / Tuna Fish Cocktail</li>
+        <li>Sigara Böreği / Cheese Rolls</li>
+        <li>Peynirli Sarımsaklı Mantar / Garlic Mushroom with Cheese</li>
+        <li>Soğan Halkaları / Onion Rings</li>
+        <li>Tavuk Kanat / Chicken Wings</li>
+        <li>Peynirli Sarımsaklı Püre / Mashed Potato with Cheese and Garlic</li>
+        <li>Kızarmış Baharatlı Soğan Topları / Onion Bhaji</li>
+        <li>Karides Tava / Shrimps Pan</li>
+        <li>Patates Kabuğu / Potato Skins with Garlic Mayo</li>
+        <li>Mantar Tava / Fried Mushroom Garlic</li>
+      </ul>
+    </details>
+
+    <!-- Mezeler / Appetizers -->
+    <details class="bg-white p-4 rounded-xl shadow">
+      <summary class="text-xl font-semibold cursor-pointer">Mezeler / Appetizers</summary>
+      <ul class="list-disc list-inside mt-2">
+        <li>Yumurta Mayonez / Egg Mayonnaise</li>
+        <li>Haydari / Yoghurt with Garlic</li>
+        <li>Antep Ezme / Spicy Pressed Tomato</li>
+        <li>Kalamar Tava / Fried Calamari</li>
+        <li>Midye Tava / Fried Mussel</li>
+        <li>Şakşuka / Shakshuka</li>
+        <li>Atom / Atom</li>
+        <li>Mantar Salatası / Mushroom Salad</li>
+        <li>Peynir Tabağı / Cheese Plate</li>
+        <li>Patates Salatası / Potato Salad</li>
+      </ul>
+    </details>
+
+    <!-- Salatalar / Salads -->
+    <details class="bg-white p-4 rounded-xl shadow">
+      <summary class="text-xl font-semibold cursor-pointer">Salatalar / Salads</summary>
+      <ul class="list-disc list-inside mt-2">
+        <li>Çoban Salata / Shepherd’s Salad</li>
+        <li>Mevsim Salatası / Seasonal Salad</li>
+        <li>Tavuklu Salata / Chicken Salad</li>
+        <li>Ton Balıklı Salata / Tuna Salad</li>
+        <li>Sezar Salata / Caesar Salad</li>
+      </ul>
+    </details>
+
+    <!-- Burger & Sandviçler / Burgers & Sandwiches -->
+    <details class="bg-white p-4 rounded-xl shadow">
+      <summary class="text-xl font-semibold cursor-pointer">Burger & Sandviçler / Burgers & Sandwiches</summary>
+      <ul class="list-disc list-inside mt-2">
+        <li>Hamburger / Hamburger</li>
+        <li>Peynirli Hamburger / Cheeseburger</li>
+        <li>Tavuk Burger / Chicken Burger</li>
+        <li>Vejetaryen Burger / Vegetarian Burger</li>
+        <li>Balık Burger / Fish Burger</li>
+        <li>Kulüp Sandviç / Club Sandwich</li>
+        <li>Tavuklu Sandviç / Chicken Sandwich</li>
+        <li>Karışık Sandviç / Mixed Sandwich</li>
+      </ul>
+    </details>
+
+    <!-- Kumpir / Baked Potatoes -->
+    <details class="bg-white p-4 rounded-xl shadow">
+      <summary class="text-xl font-semibold cursor-pointer">Kumpir / Baked Potatoes</summary>
+      <ul class="list-disc list-inside mt-2">
+        <li>Klasik Kumpir / Classic Baked Potato</li>
+        <li>Karışık Kumpir / Mixed Baked Potato</li>
+        <li>Sosisli Kumpir / Baked Potato with Sausage</li>
+        <li>Rus Salatalı Kumpir / Baked Potato with Russian Salad</li>
+        <li>Mısırlı Kumpir / Baked Potato with Corn</li>
+      </ul>
+    </details>
+<!-- Makarna / Pasta -->
+<details class="bg-white p-4 rounded-xl shadow">
+  <summary class="text-xl font-semibold cursor-pointer">Makarna / Pasta</summary>
+  <ul class="list-disc list-inside mt-2">
+    <li>Spagetti Napoli / Spaghetti Napoli</li>
+    <li>Spagetti Bolonez / Spaghetti Bolognese</li>
+    <li>Spagetti Carbonara / Spaghetti Carbonara</li>
+    <li>Fettucini Alfredo / Fettuccine Alfredo</li>
+    <li>Kremalı Tavuklu Makarna / Pasta with Creamy Chicken</li>
+    <li>Peynirli Makarna / Cheese Pasta</li>
+    <li>Vejetaryen Makarna / Vegetarian Pasta</li>
+  </ul>
+</details>
+<!-- Pizza -->
+<details class="bg-white p-4 rounded-xl shadow">
+  <summary class="text-xl font-semibold cursor-pointer">Pizza</summary>
+  <ul class="list-disc list-inside mt-2">
+    <li>Margarita / Margherita</li>
+    <li>Karışık Pizza / Mixed Pizza</li>
+    <li>Pepperoni Pizza / Pepperoni Pizza</li>
+    <li>Vejetaryen Pizza / Vegetarian Pizza</li>
+    <li>Tavuklu Pizza / Chicken Pizza</li>
+    <li>Dört Peynirli Pizza / Four Cheese Pizza</li>
+    <li>Deniz Mahsullü Pizza / Seafood Pizza</li>
+  </ul>
+</details>
+<!-- Hint Yemekleri / Indian Dishes -->
+<details class="bg-white p-4 rounded-xl shadow">
+  <summary class="text-xl font-semibold cursor-pointer">Hint Yemekleri / Indian Dishes</summary>
+  <ul class="list-disc list-inside mt-2">
+    <li>Tavuk Köri / Chicken Curry</li>
+    <li>Tavuk Tikka / Chicken Tikka</li>
+    <li>Tavuk Masala / Chicken Masala</li>
+    <li>Karides Köri / Prawn Curry</li>
+    <li>Sebzeli Köri / Vegetable Curry</li>
+    <li>Baharatlı Pilav / Spicy Rice</li>
+    <li>Naan Ekmek / Naan Bread</li>
+    <li>Yoğurtlu Salata / Raita</li>
+    <li>Hint Usulü Mercimek / Indian Lentil</li>
+  </ul>
+</details>
+<!-- Çin Yemekleri / Chinese Dishes -->
+<details class="bg-white p-4 rounded-xl shadow">
+  <summary class="text-xl font-semibold cursor-pointer">Çin Yemekleri / Chinese Dishes</summary>
+  <ul class="list-disc list-inside mt-2">
+    <li>Tavuklu Noodle / Chicken Noodles</li>
+    <li>Sebzeli Noodle / Vegetable Noodles</li>
+    <li>Etli Noodle / Beef Noodles</li>
+    <li>Tatlı Ekşi Tavuk / Sweet and Sour Chicken</li>
+    <li>Kung Pao Tavuk / Kung Pao Chicken</li>
+    <li>Tavuklu Çin Pilavı / Chicken Fried Rice</li>
+    <li>Karidesli Çin Pilavı / Prawn Fried Rice</li>
+    <li>Sebzeli Çin Pilavı / Vegetable Fried Rice</li>
+    <li>Çin Usulü Sebzeler / Stir Fried Vegetables</li>
+  </ul>
+</details>
+<!-- Meksika Yemekleri / Mexican Dishes -->
+<details class="bg-white p-4 rounded-xl shadow">
+  <summary class="text-xl font-semibold cursor-pointer">Meksika Yemekleri / Mexican Dishes</summary>
+  <ul class="list-disc list-inside mt-2">
+    <li>Tavuklu Fajita / Chicken Fajita</li>
+    <li>Etli Fajita / Beef Fajita</li>
+    <li>Vejetaryen Fajita / Vegetarian Fajita</li>
+    <li>Nachos Peynirli / Nachos with Cheese</li>
+    <li>Nachos Etli / Nachos with Meat</li>
+    <li>Quesadilla Tavuklu / Chicken Quesadilla</li>
+    <li>Quesadilla Peynirli / Cheese Quesadilla</li>
+    <li>Taco Tavuklu / Chicken Taco</li>
+    <li>Taco Etli / Beef Taco</li>
+    <li>Burrito Tavuklu / Chicken Burrito</li>
+    <li>Burrito Etli / Beef Burrito</li>
+  </ul>
+</details>
+<!-- Kebap & Güveç / Kebabs & Casseroles -->
+<details class="bg-white p-4 rounded-xl shadow">
+  <summary class="text-xl font-semibold cursor-pointer">Kebap & Güveç / Kebabs & Casseroles</summary>
+  <ul class="list-disc list-inside mt-2">
+    <li>Adana Kebap / Adana Kebab</li>
+    <li>Urfa Kebap / Urfa Kebab</li>
+    <li>Patlıcan Kebap / Eggplant Kebab</li>
+    <li>Çöp Şiş / Lamb Skewers</li>
+    <li>Tavuk Şiş / Chicken Skewers</li>
+    <li>Karışık Kebap / Mixed Kebab</li>
+    <li>Güveç Etli / Meat Casserole</li>
+    <li>Güveç Tavuklu / Chicken Casserole</li>
+    <li>Kaşarlı Güveç / Casserole with Cheese</li>
+    <li>Mantar Güveç / Mushroom Casserole</li>
+  </ul>
+</details>
+<!-- Sebze Yemekleri / Vegetable Dishes -->
+<details class="bg-white p-4 rounded-xl shadow">
+  <summary class="text-xl font-semibold cursor-pointer">Sebze Yemekleri / Vegetable Dishes</summary>
+  <ul class="list-disc list-inside mt-2">
+    <li>Zeytinyağlı Taze Fasulye / Green Beans with Olive Oil</li>
+    <li>Imam Bayıldı / Stuffed Eggplant with Olive Oil</li>
+    <li>Kabak Yemeği / Stewed Zucchini</li>
+    <li>Enginar / Artichoke with Olive Oil</li>
+    <li>Patates Oturtma / Baked Potatoes with Vegetables</li>
+    <li>Vejetaryen Kızartma / Mixed Fried Vegetables</li>
+    <li>Domatesli Biberli Sebze Tava / Fried Vegetables with Tomato & Pepper</li>
+  </ul>
+</details>
+<!-- Ev Yemekleri / Homemade Dishes -->
+<details class="bg-white p-4 rounded-xl shadow">
+  <summary class="text-xl font-semibold cursor-pointer">Ev Yemekleri / Homemade Dishes</summary>
+  <ul class="list-disc list-inside mt-2">
+    <li>Kuru Fasulye / Beans Stew</li>
+    <li>Mercimek Yemeği / Lentil Stew</li>
+    <li>Etli Patates / Meat with Potatoes</li>
+    <li>Tavuk Sote / Sautéed Chicken</li>
+    <li>Karnıyarık / Stuffed Eggplant with Minced Meat</li>
+    <li>Lahana Sarması / Stuffed Cabbage Rolls</li>
+    <li>Yaprak Sarma / Stuffed Grape Leaves</li>
+    <li>Musakka / Moussaka</li>
+    <li>Sebzeli Tavuk / Chicken with Vegetables</li>
+  </ul>
+</details>
+<!-- Deniz Ürünleri / Seafood -->
+<details class="bg-white p-4 rounded-xl shadow">
+  <summary class="text-xl font-semibold cursor-pointer">Deniz Ürünleri / Sea Food</summary>
+  <ul class="list-disc list-inside mt-2">
+    <li>Izgara Levrek / Grilled Sea Bass</li>
+    <li>Izgara Çipura / Grilled Sea Bream</li>
+    <li>Tava Hamsi / Fried Anchovies</li>
+    <li>Tava Sardalya / Fried Sardines</li>
+    <li>Somon Izgara / Grilled Salmon</li>
+    <li>Karides Güveç / Shrimp Casserole</li>
+    <li>Karides Tava / Fried Shrimp</li>
+    <li>Midye Tava / Fried Mussels</li>
+    <li>Kalamar Tava / Fried Calamari</li>
+    <li>Karışık Deniz Ürünleri / Mixed Seafood</li>
+  </ul>
+</details>
+<!-- Tavuk Yemekleri / Chicken Dishes -->
+<details class="bg-white p-4 rounded-xl shadow">
+  <summary class="text-xl font-semibold cursor-pointer">Tavuk Yemekleri / Chicken Dishes</summary>
+  <ul class="list-disc list-inside mt-2">
+    <li>Izgara Tavuk / Grilled Chicken</li>
+    <li>Tavuk Şinitzel / Chicken Schnitzel</li>
+    <li>Kremalı Mantarlı Tavuk / Chicken with Cream & Mushroom</li>
+    <li>Fırın Tavuk / Baked Chicken</li>
+    <li>Tavuk Sote / Sauteed Chicken</li>
+    <li>Tavuk Kanat / Chicken Wings</li>
+    <li>Acılı Tavuk / Spicy Chicken</li>
+    <li>Tavuk Tava / Fried Chicken</li>
+    <li>Tavuk Izgara Bonfile / Grilled Chicken Fillet</li>
+    <li>Tavuk Parmesan / Chicken Parmesan</li>
+  </ul>
+</details>
+<!-- Tatlılar / Desserts -->
+<details class="bg-white p-4 rounded-xl shadow">
+  <summary class="text-xl font-semibold cursor-pointer">Tatlılar / Desserts</summary>
+  <ul class="list-disc list-inside mt-2">
+    <li>Baklava / Baklava</li>
+    <li>Künefe / Kunefe</li>
+    <li>Sütlaç / Rice Pudding</li>
+    <li>Profiterol / Profiterole</li>
+    <li>Meyve Tabağı / Fruit Plate</li>
+    <li>Dondurma / Ice Cream</li>
+    <li>Muhallebi / Milk Pudding</li>
+    <li>Cheesecake / Cheesecake</li>
+    <li>Tiramisu / Tiramisu</li>
+  </ul>
+</details>
+
+
+  </div>
+
+</section>
+
+<section id="iletisim">
+  <h2>İletişim</h2>
+  <p>Telefon : +90 (544) 670 71 89</p>
+  <p>Adres : Kadınlar Denizi Mah. Kadınlar Denizi Cad. No:91  Kuşadası/Aydın, Türkiye</p>
+</section>
+
+<section id="konum">
+  <h2>Konum</h2>
+  <iframe
+    src="https://www.google.com/maps?q=37.84328291441679,27.242496763796815&hl=tr&z=16&output=embed"
+    loading="lazy"
+    allowfullscreen>
+  </iframe>
+</section>
+
+<footer>
+  &copy; 2025 Restoran Adı. Tüm Hakları Saklıdır.
+</footer>
+
+<script>
+  function goster(id) {
+    const bolumler = document.querySelectorAll("section");
+    bolumler.forEach(b => b.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+  }
+</script>
+
+</body>
+</html>
